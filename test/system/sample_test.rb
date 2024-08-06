@@ -8,15 +8,14 @@ class SampleTest < PlaywrightSystemTestCase
     assert_text 'Home'
   end
 
-  test 'login' do
-    visit '/my/page'
-    assert_equal '/login', current_path
-    within('#login-form form') do
-      fill_in 'username', :with => 'admin'
-      fill_in 'password', :with => 'admin'
-      find('input[name=login]').click
-    end
-    assert_equal '/my/page', current_path
-    assert_text 'admin'
+  test 'Create issue' do
+    log_user('admin', 'admin')
+    visit '/issues/new'
+
+    fill_in 'Subject', with: 'issue subject'
+    click_on 'Create'
+
+    assert_text 'issue subject'
+    assert_text "Issue ##{Issue.last.id} created."
   end
 end
