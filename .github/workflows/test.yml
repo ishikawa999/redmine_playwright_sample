@@ -54,6 +54,6 @@ jobs:
       uses: actions/upload-artifact@v4
       if: failure()
       with:
-        name: test-failure-screenshots
+        name: screenshots-${{ matrix.redmine-repository }}-${{ matrix.redmine-version }}-${{ matrix.ruby-version }}
         path: /home/runner/work/redmine_playwright_sample/redmine_playwright_sample/tmp/screenshots
         retention-days: 1

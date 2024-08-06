@@ -1,7 +1,7 @@
 require_relative '../test_helper'
 
 class FailureTest < PlaywrightSystemTestCase
-  fixtures :users, :members, :member_roles
+  fixtures :all
 
   test 'should fail' do
     log_user('admin', 'admin')

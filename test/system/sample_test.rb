@@ -1,9 +1,11 @@
 require_relative '../test_helper'
 
 class SampleTest < PlaywrightSystemTestCase
-  fixtures :users, :members, :member_roles
+  fixtures :all
 
   test 'home' do
+    log_user('admin', 'admin')
+
     visit '/'
     assert_text 'Home'
   end
