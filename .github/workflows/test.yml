@@ -57,6 +57,6 @@ jobs:
       uses: actions/upload-artifact@v4
       if: failure()
       with:
-        name: screenshots-${{ artifact-id }}
+        name: screenshots-${{ matrix.artifact-id }}
         path: /home/runner/work/redmine_playwright_sample/redmine_playwright_sample/tmp/screenshots
         retention-days: 1
