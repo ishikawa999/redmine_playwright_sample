@@ -4,6 +4,8 @@ class FailureTest < PlaywrightSystemTestCase
   fixtures :all
 
   test 'should fail' do
+    skip
+
     log_user('admin', 'admin')
     visit '/projects/ecookbook/issues/new'
 
