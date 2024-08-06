@@ -51,7 +51,7 @@ jobs:
       run: RAILS_ENV=test bundle exec rake test TEST=plugins/redmine_playwright_sample
 
     - name: Store screenshots Artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: failure()
       with:
         name: test-failure-screenshots

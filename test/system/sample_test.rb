@@ -1,7 +1,7 @@
 require_relative '../test_helper'
 
 class SampleTest < PlaywrightSystemTestCase
-  fixtures :users
+  fixtures :users, :members, :member_roles
 
   test 'home' do
     visit '/'
