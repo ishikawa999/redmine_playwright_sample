@@ -47,6 +47,9 @@ jobs:
         npx playwright install chromium
         npx playwright install-deps
 
+    - name: Run tests
+      run: RAILS_ENV=test bundle exec rake test TEST=plugins/redmine_playwright_sample
+
     - name: Store screenshots Artifacts
       uses: actions/upload-artifact@v3
       if: failure()
@@ -54,6 +57,3 @@ jobs:
         name: test-failure-screenshots
         path: /home/runner/work/redmine_playwright_sample/redmine_playwright_sample/tmp/screenshots
         retention-days: 1
-
-    - name: Run tests
-      run: RAILS_ENV=test bundle exec rake test TEST=plugins/redmine_playwright_sample
